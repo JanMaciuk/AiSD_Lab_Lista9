@@ -19,6 +19,7 @@ public class Main {
         Tree drzewko = new Tree(rpn);
         drzewko.printRPN();
         drzewko.printNormal();
+        drzewko.Przeglad();
         System.out.println("Wynik wyrażenia: "+drzewko.result());
         System.out.println("Rozmiar drzewa:  "+ drzewko.size()); // Liczba węzłów
         System.out.println("Wysokość drzewa: "+ drzewko.height());

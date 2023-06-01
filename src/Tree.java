@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class Tree {
@@ -39,6 +41,20 @@ public class Tree {
         }
 
         return stos.pop(); // Korzeń
+    }
+    public void Przeglad(){
+        System.out.print("Przegląd poziomami: ");
+        przegladPoziomami(root);
+        System.out.println();
+    }
+    private static void przegladPoziomami(Node node) {
+        Queue<Node> kolejka = new LinkedList<>();
+        kolejka.add(node);
+        while(!kolejka.isEmpty()){
+            if (kolejka.peek().left != null) kolejka.add(kolejka.peek().left);
+            if (kolejka.peek().right != null) kolejka.add(kolejka.peek().right);
+            System.out.print(kolejka.remove().value+ " ");
+        }
     }
 
     private static void postOrderWalkPrint(Node node) {
